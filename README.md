@@ -40,14 +40,14 @@ The quickest way to get up and running is to use the free cloud-hosted service a
 
 # Plugins
 
-Imposter uses plugins to control its behaviour and provide specialised mocks:
+Imposter provides specialised mocks for the following scenarios:
 
 * **[OpenAPI](docs/openapi_plugin.md)** - Support for [OpenAPI](https://github.com/OAI/OpenAPI-Specification) (and Swagger) API specifications.
 * **[REST](docs/rest_plugin.md)** - Mocks RESTful or plain HTTP APIs.
 * **[HBase](docs/hbase_plugin.md)** - Basic HBase mock implementation.
 * **[SFDC (Salesforce) plugin](docs/sfdc_plugin.md)** - Basic Salesforce mock implementation.
 
-You can also create your own plugins, using a JVM language of your choice.
+These use a plugin system, so you can also create your own plugins, using any JVM language.
 
 # Example
 
@@ -60,9 +60,7 @@ Parsing configuration file: someapi-config.yaml
 Mock server is up and running
 ```
 
-Your mock server is now running!
-
-You can hit the URL [http://localhost:8080/users](http://localhost:8080/users) to see the mock response:
+Your mock server is now running! Here Imposter provides HTTP responses to simulate an API that accepts users and returns a dynamic response containing the user ID from the request.
 
 ```shell
 $ curl -v -X PUT http://localhost:8080/users/alice
