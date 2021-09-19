@@ -71,6 +71,8 @@ Content-Type: application/json
 { "userName": "alice" }
 ```
 
+This is a trivial example, which you can extend with conditional logic, request validation, data capture and much more... 
+
 # How to run Imposter
 
 There are lots of way to run Imposter.
