@@ -4,20 +4,17 @@ Reliable, scriptable and extensible mock server for REST APIs,
 [OpenAPI](https://github.com/OAI/OpenAPI-Specification) (and Swagger) specifications,
 Salesforce and HBase APIs.
 
-Scripting support for both JavaScript or [Groovy/Java](http://www.groovy-lang.org/).
+Run standalone mock servers, or embed mocks within your tests (supports JVM and Node.js).
 
-## What's it for?
+Dynamic responses can be scripted using JavaScript or Groovy/Java.
 
-Run standalone mock servers, or embed mocks within your JVM or Node.js tests.
-
-Use Imposter to:
+## Features
 
 * run standalone mocks in place of real systems
-* turn an OpenAPI/Swagger file into a mock API for testing or QA
-* quickly set up a temporary API for your mobile/web client teams whilst the real API is being built
+* turn an OpenAPI/Swagger file into a mock API for testing or QA (even before the real API is built)
 * decouple your integration tests from the cloud/various back-end systems and take control of your dependencies
 * validate your API requests against an OpenAPI specification
-* capture data and use response templates to provide conditional responses
+* capture data and validate later or use response templates to provide conditional responses
 
 Send dynamic responses:
 
