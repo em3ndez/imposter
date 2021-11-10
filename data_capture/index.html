@@ -1,0 +1,1232 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Data capture - Imposter Mocks</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capturing-request-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Imposter Mocks" class="md-header__button md-logo" aria-label="Imposter Mocks" data-md-component="logo">
+      
+  <img src="../images/plain_logo14.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Imposter Mocks
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data capture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Imposter Mocks" class="md-nav__button md-logo" aria-label="Imposter Mocks" data-md-component="logo">
+      
+  <img src="../images/plain_logo14.png" alt="logo">
+
+    </a>
+    Imposter Mocks
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.imposter.sh" class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        Configuration guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripting/" class="md-nav__link">
+        Scripting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Plugins
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Plugins" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Plugins
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openapi_plugin/" class="md-nav__link">
+        OpenAPI (and Swagger) plugin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest_plugin/" class="md-nav__link">
+        REST plugin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hbase_plugin/" class="md-nav__link">
+        HBase plugin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sfdc_plugin/" class="md-nav__link">
+        SFDC (Salesforce) plugin
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Data capture, storage and templates
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data capture, storage and templates" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Data capture, storage and templates
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data capture
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data capture
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#capture-example" class="md-nav__link">
+    Capture example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capture-configuration" class="md-nav__link">
+    Capture configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-scoped-store" class="md-nav__link">
+    Request scoped store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturing-the-request-body" class="md-nav__link">
+    Capturing the request body
+  </a>
+  
+    <nav class="md-nav" aria-label="Capturing the request body">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-values" class="md-nav__link">
+    Constant values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturing-an-object" class="md-nav__link">
+    Capturing an object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-item-names" class="md-nav__link">
+    Dynamic item names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capture-performance" class="md-nav__link">
+    Capture performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
+        Response templates
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../stores/" class="md-nav__link">
+        Stores
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Advanced" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usage/" class="md-nav__link">
+        Usage (arguments and environment variables)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../request_matching/" class="md-nav__link">
+        Advanced request matching
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openapi_validation/" class="md-nav__link">
+        OpenAPI validation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance_simulation/" class="md-nav__link">
+        Performance simulation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metrics_logs_telemetry/" class="md-nav__link">
+        Metrics, logs and telemetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance_tuning/" class="md-nav__link">
+        Performance tuning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls_ssl/" class="md-nav__link">
+        TLS/SSL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips_tricks/" class="md-nav__link">
+        Tips and tricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../benchmarks/" class="md-nav__link">
+        Benchmarks
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          Developers
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developers" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Developers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/outofcoffee/imposter" class="md-nav__link">
+        GitHub
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../build/" class="md-nav__link">
+        Build
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        Roadmap
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_12">
+          Tutorials
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://medium.com/@outofcoffee/mocking-apis-with-swagger-and-imposter-3694bd1733c0" class="md-nav__link">
+        Mocking APIs with Swagger and Imposter
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://medium.com/@outofcoffee/mocking-apis-with-imposter-53bd908632e5" class="md-nav__link">
+        Mocking REST APIs with Imposter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#capture-example" class="md-nav__link">
+    Capture example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capture-configuration" class="md-nav__link">
+    Capture configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request-scoped-store" class="md-nav__link">
+    Request scoped store
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capturing-the-request-body" class="md-nav__link">
+    Capturing the request body
+  </a>
+  
+    <nav class="md-nav" aria-label="Capturing the request body">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constant-values" class="md-nav__link">
+    Constant values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#capturing-an-object" class="md-nav__link">
+    Capturing an object
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-item-names" class="md-nav__link">
+    Dynamic item names
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capture-performance" class="md-nav__link">
+    Capture performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="capturing-request-data">Capturing request data</h1>
+<p>Imposter allows you to capture elements of the request. You can use these elements in a <a href="../templates/">response template</a>, a <a href="../scripting/">script</a> or add them to a <a href="../stores/">store</a> for later use.</p>
+<p>It is possible to capture the following elements into a store:</p>
+<ul>
+<li>path parameter</li>
+<li>query parameter</li>
+<li>request header</li>
+<li>part or all of the request body (using JsonPath expression)</li>
+</ul>
+<h2 id="capture-example">Capture example</h2>
+<p>Use the <code>capture</code> block of a resource, as follows:</p>
+<pre><code class="language-yaml">resources:
+  - path: &quot;/users/:userName&quot;
+    method: PUT
+    capture:
+      user:
+        pathParam: userName
+        store: testStore
+</code></pre>
+<p>In this example, the value of the path parameter 'userName' is added to the store named 'testStore' as an item named 'user'.</p>
+<p>For example, the following request:</p>
+<pre><code>PUT /users/alice
+</code></pre>
+<p>...would result in the 'testStore' store containing the item 'user' with the value 'alice'.</p>
+<p>Note that the name of the item is the object key - in the above example it is <code>user</code>. Multiple items can be captured from the same request using different keys:</p>
+<pre><code class="language-yaml">resources:
+  - path: &quot;/users/:userName&quot;
+    method: PUT
+    capture:
+      user:
+        pathParam: userName
+        store: testStore
+      agent:
+        requestHeader: User-Agent
+        store: testStore
+</code></pre>
+<h2 id="capture-configuration">Capture configuration</h2>
+<p>The following configuration options are available for a capture:</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capture block key</td>
+<td>The name of the item to capture, e.g. <code>user</code>.</td>
+</tr>
+<tr>
+<td><code>store</code></td>
+<td>The name of the store in which to put the item.</td>
+</tr>
+<tr>
+<td><code>pathParam</code></td>
+<td>The name of the path parameter to capture. Must reference the resource path, e.g. <code>userId</code> for a path of <code>/users/:userId</code></td>
+</tr>
+<tr>
+<td><code>queryParam</code></td>
+<td>The name of the query parameter to capture.</td>
+</tr>
+<tr>
+<td><code>requestHeader</code></td>
+<td>The name of the request header to capture.</td>
+</tr>
+<tr>
+<td><code>jsonPath</code></td>
+<td>The JsonPath expression to query the JSON body. Only works with JSON request bodies.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="request-scoped-store">Request scoped store</h2>
+<p>There is a special request-scoped store, named <code>request</code>, which is accessible only to the current request. Its contents do not persist beyond the lifecycle of the request.</p>
+<p>The request scoped store is very useful when you need to capture an item for immediate use, such as in a response template, but you don't need to persist it for later use.</p>
+<p>Here is an example combining capture and response template:</p>
+<blockquote>
+<p>Learn more about <a href="../templates/">response templates</a>.</p>
+</blockquote>
+<pre><code class="language-yaml"># part of your configuration file
+
+resources:
+  - path: &quot;/users/:userName&quot;
+    method: PUT
+    capture:
+      user:
+        pathParam: userName
+        store: request
+    response:
+      staticFile: example-template.json
+      template: true
+</code></pre>
+<p>Here is the corresponding template file:</p>
+<pre><code>{
+  &quot;userName&quot;: &quot;${request.user}&quot;
+}
+</code></pre>
+<p>If you were to make the following request:</p>
+<pre><code>curl -X PUT http://localhost:8080/users/alice
+</code></pre>
+<p>...you would receive the following response:</p>
+<pre><code class="language-json">{
+  &quot;userName&quot;: &quot;alice&quot;
+}
+</code></pre>
+<h2 id="capturing-the-request-body">Capturing the request body</h2>
+<p>You can capture part or all of the request body using a JsonPath expression.</p>
+<p>For example, if the request body was:</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Alice&quot;,
+  &quot;address&quot;: {
+    &quot;street&quot;: &quot;1 Main Street&quot;,
+    &quot;postCode&quot;: &quot;PO5 7CO&quot;
+  }
+}
+</code></pre>
+<p>...you could capture the name as follows:</p>
+<pre><code class="language-yaml"># part of your configuration file
+
+resources:
+  - path: &quot;/users&quot;
+    method: POST
+    capture:
+      firstName:
+        jsonPath: $.name
+        store: testStore
+</code></pre>
+<p>In this example, the <code>name</code> property of the body would be stored in the 'firstName' item in the store named 'testStore'.</p>
+<h3 id="constant-values">Constant values</h3>
+<p>In some scenarios, you may wish to capture a constant value.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">plugin: rest
+
+- method: GET
+  path: /test
+  capture:
+    # constant value
+    receivedRequest:
+      store: example
+      const: yes
+  response:
+    statusCode: 200
+</code></pre>
+<p>In the example above, the value <code>yes</code> is stored in the 'example' store, with the name 'receivedRequest', when the given endpoint is hit.</p>
+<h3 id="capturing-an-object">Capturing an object</h3>
+<p>In some scenarios you may wish to capture an object instead of a single value.</p>
+<p>For example, to capture the address from the example above, use the JsonPath expression <code>$.address</code> - this will result in the entire address object being captured.</p>
+<p>You can retrieve this object in a script, by accessing the <a href="../stores/">store</a> named 'testStore', or you could use it in a JsonPath placeholder within a <a href="../templates/">template</a>.</p>
+<h3 id="dynamic-item-names">Dynamic item names</h3>
+<p>You do not have to specify a constant value for the item name - you can use a property of the request, such as a query or path parameter, header or body element as the item name.</p>
+<p>Dynamic item names are useful when you want to capture collections of items, each with their own name derived from the request.</p>
+<p>Example:</p>
+<pre><code class="language-yaml">plugin: rest
+
+- method: PUT
+  path: /users/admins/:userId
+  capture:
+    # constant value, but dynamic key
+    adminUser:
+      key:
+        pathParam: userId
+      store: adminUsers
+      const: admin
+  response:
+    statusCode: 200
+</code></pre>
+<p>In the example above, an item corresponding to the <code>userId</code> parameter in the request is added to the 'adminUsers' store with the constant value <code>admin</code>.</p>
+<blockquote>
+<p>Note: Values do not have to be constant - you can combine dynamic item names and captured data.</p>
+</blockquote>
+<h2 id="capture-performance">Capture performance</h2>
+<p>Data capture incurs overhead on response times, depending on the speed of the store implementation used. If using the in-memory store, the performance impact is lower than using an external store. For store providers backed by external datastores, requests will incur a synchronous write to the store when capturing data.</p>
+<p>Using JsonPath to capture the request body is computationally expensive, as it requires parsing and querying of the request body item rather than just copying a reference.</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li><a href="https://github.com/outofcoffee/imposter/blob/master/docs/examples/rest/data-capture">data-capture</a></li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../sfdc_plugin/" class="md-footer__link md-footer__link--prev" aria-label="Previous: SFDC (Salesforce) plugin" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              SFDC (Salesforce) plugin
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../templates/" class="md-footer__link md-footer__link--next" aria-label="Next: Response templates" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Response templates
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+    
+  </body>
+</html>
